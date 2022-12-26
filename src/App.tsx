@@ -5,9 +5,9 @@ import {Nav} from "./components/Nav/nav";
 import {Profile} from "./components/Profile/Profile";
 import {Dialogs} from "./components/Dialogs/Dialogs";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {AppType} from "./index";
 
-const App = () => {
-
+const App = (props: AppType) => {
     return (
         <BrowserRouter>
             <div className="app-wrapper">
@@ -15,11 +15,10 @@ const App = () => {
                 <Nav/>
                 <div className="app-wrapper-content">
                     <Routes>
-                        <Route path="/" element={<Profile/>}>
-                            <Route path="/profile" element={<Profile/>}/>
+                        <Route path="/" element={<Profile posts={props.posts}/>}>
+                            <Route path="/profile" element={<Profile posts={props.posts}/>}/>
                         </Route>
-                        <Route  path="/dialogs" element={<Dialogs/>}/>
-                        
+                        <Route path="/dialogs" element={<Dialogs dialogs={props.dialogs} messages={props.messages}/>}/>
                     </Routes>
                 </div>
             </div>

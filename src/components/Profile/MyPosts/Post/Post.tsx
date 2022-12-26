@@ -2,7 +2,7 @@ import React from 'react';
 import s from './post.module.css';
 export type MessageType={
     message:string
-    likeCount:string
+    likeCount:number
 }
 export const Post = (props:MessageType) => {
     return (
