@@ -19,6 +19,7 @@ export const MyPosts = (props: PostsType) => {
     let addPost = () => {
         let text = newPostElement.current.value
         props.addPost(text)
+        newPostElement.current.value= ""
     }
     return (<div className={s.postBlock}>
             <h3> My posts</h3>
