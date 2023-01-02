@@ -1,6 +1,28 @@
 import {rerenderEntireTree} from "../../render";
+export type RootStateType={
+    profilePage:ProfilePageType,
+    dialogsPage:DialogsPageType
 
-let state = {
+}
+export type PostType={
+    id:number,
+    message:string,
+    likesCount:number
+}
+export type PostsType=Array<PostType>
+export type ProfilePageType={posts:PostsType}
+type MessageType={
+    id:number,
+    message:string
+}
+type DialogType={
+    id:number,
+    name:string
+}
+type DialogsType=Array<DialogType>
+type MessagesType=Array<MessageType>
+type DialogsPageType={messages:MessagesType,dialogs:DialogsType}
+let state:RootStateType = {
     profilePage: {
         posts: [
             {id: 1, message: "Hi,how are you", likesCount: 12},

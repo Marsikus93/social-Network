@@ -2,12 +2,17 @@ import React from 'react';
 // import s from "./profile.module.css";
 import {MyPosts} from "./MyPosts/MyPosts";
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
+import {PostsType} from "../redux/state";
+type ProfilePropsType={
+    posts: PostsType
+    addPost: (postMessage: string) => void
 
-export const Profile = (props: any) => {
+}
+export const Profile = (props: ProfilePropsType) => {
     return (
         <div>
             <ProfileInfo/>
-            <MyPosts posts={props.state.posts} addPost={props.addPost}/>
+            <MyPosts posts={props.posts} addPost={props.addPost}/>
         </div>
     )
 }
