@@ -15,13 +15,13 @@ type MessageType={
     id:number,
     message:string
 }
-type DialogType={
+export type DialogType={
     id:number,
     name:string
 }
-type DialogsType=Array<DialogType>
+export type DialogsType=Array<DialogType>
 type MessagesType=Array<MessageType>
-type DialogsPageType={messages:MessagesType,dialogs:DialogsType}
+export type DialogsPageType={messages:MessagesType,dialogs:DialogsType}
 let state:RootStateType = {
     profilePage: {
         posts: [
